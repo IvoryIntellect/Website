@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar">
     <div class="logo">HTML5</div>
     <ul class="nav-links">
-        <li><a href="website.html">Trang chủ</a></li>
+        <li><a href="index.html">Trang chủ</a></li>
         <li><a href="about.html">Về Nhóm</a></li>
         <li><a href="login.html" id="login-link">Đăng Nhập</a></li>
     </ul>
@@ -45,7 +41,6 @@
 </div>
 
 <script>
-    // Khởi tạo danh sách tài khoản mặc định nếu chưa tồn tại trong localStorage
     const INITIAL_ACCOUNTS = [
         { "username": "admin", "password": "123", "fullname": "Quản trị viên", "last_login": "", "last_logout": "", "last_session": "" }
     ];
@@ -54,8 +49,6 @@
         if (!localStorage.getItem('allAccounts')) {
             localStorage.setItem('allAccounts', JSON.stringify(INITIAL_ACCOUNTS));
         }
-        
-        // Hiển thị tên nếu đã đăng nhập (giống about.html và website.html)
         const savedUser = localStorage.getItem('loggedInUser');
         const loginLink = document.getElementById('login-link');
         if (savedUser && loginLink) {
@@ -72,24 +65,16 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm-password').value;
-
-        // 1. Kiểm tra mật khẩu nhập lại
         if (password !== confirmPassword) {
             alert("Mật khẩu nhập lại không khớp!");
             return;
         }
-
-        // 2. Lấy danh sách tài khoản hiện có
         let allAccounts = JSON.parse(localStorage.getItem('allAccounts'));
-
-        // 3. Kiểm tra xem username đã tồn tại chưa
         const userExists = allAccounts.find(u => u.username === username);
         if (userExists) {
             alert("Tên đăng nhập này đã tồn tại. Vui lòng chọn tên khác!");
             return;
         }
-
-        // 4. Thêm tài khoản mới vào mảng
         const newUser = {
             "username": username,
             "password": password,
@@ -100,12 +85,10 @@
         };
 
         allAccounts.push(newUser);
-
-        // 5. Lưu lại vào localStorage
         localStorage.setItem('allAccounts', JSON.stringify(allAccounts));
 
         alert("Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.");
-        window.location.href = "login.html"; // Chuyển hướng sang trang đăng nhập
+        window.location.href = "login.html";
     };
 </script>
 </body>

@@ -1,11 +1,23 @@
+@font-face {
+    font-family: 'SN Pro';
+    src: url('fonts/sn-pro.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('fonts/nunito.woff2') format('woff2');
+    font-weight: 400;
+}
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', Arial, sans-serif; /* Priority to local font */
     background: whitesmoke;
     background-size: cover;
     background-attachment: fixed; 
     min-height: 100vh;
 }
+
 .navbar {
     display: flex; 
     justify-content: space-between; 
@@ -16,6 +28,7 @@ body {
     top: 0;
     z-index: 1000;            
 }
+
 .logo {
     color: black;
     font-size: 30px;
