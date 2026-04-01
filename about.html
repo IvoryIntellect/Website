@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Nhóm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">HTML5</div>
+    <ul class="nav-links">
+        <li><a href="website.html">Trang chủ</a></li>
+        <li><a href="about.html">Về Nhóm</a></li>
+        <li><a href="login.html" id="login-link">Đăng Nhập</a></li>
+    </ul>
+</nav>
+
+<div class="member-container">
+    <div class="box member-box">
+        <h3>Phạm Phú Long [Ivory]</h3>
+        <p><strong>Vai trò:</strong> Trưởng nhóm, Lập trình chính</p>
+        <p><strong>Mô tả:</strong> Quản lý dự án và lập trình trang web.</p>
+    </div>
+
+    <div class="box member-box">
+        <h3>Trần Minh Phát [Kaori]</h3>
+        <p><strong>Vai trò:</strong> Lập trình phụ, Thiết kế giao diện</p>
+        <p><strong>Mô tả:</strong> Phụ trách thiết kế giao diện và hỗ trợ.</p>
+    </div>
+
+    <div class="box member-box">
+        <h3>Nguyễn Văn Hào [Felix]</h3>
+        <p><strong>Vai trò:</strong> Tìm kiếm nội dung</p>
+        <p><strong>Mô tả:</strong> Biên soạn nội dung và lên ý tưởng.</p>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        const savedUser = localStorage.getItem('loggedInUser');
+        const loginLink = document.getElementById('login-link');
+        if (savedUser && loginLink) {
+            loginLink.innerText = savedUser;
+        }
+    });
+</script>
+</body>
+</html>
