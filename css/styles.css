@@ -1,13 +1,11 @@
 @font-face {
     font-family: 'SN Pro';
-    src: url('fonts/sn-pro.woff2') format('woff2');
-    font-weight: 400;
+    src: url('../fonts/sn-pro-v1-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Nunito';
-    src: url('fonts/nunito.woff2') format('woff2');
-    font-weight: 400;
+    src: url('../fonts/nunito-v32-latin-regular.woff2') format('woff2');
 }
 body {
     margin: 0;
